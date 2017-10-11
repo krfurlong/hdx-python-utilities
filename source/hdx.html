@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>hdx package &#8212; HDX Python Utilities 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hdx-package">
+<h1>hdx package<a class="headerlink" href="#hdx-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hdx.utilities.html">hdx.utilities package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.dictandlist">hdx.utilities.dictandlist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.downloader">hdx.utilities.downloader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.email">hdx.utilities.email module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hdx.utilities.html#emailer">Emailer:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.loader">hdx.utilities.loader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.location">hdx.utilities.location module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.path">hdx.utilities.path module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.session">hdx.utilities.session module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities.text">hdx.utilities.text module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdx.utilities.html#module-hdx.utilities">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hdx.hdx_logging">
+<span id="hdx-hdx-logging-module"></span><h2>hdx.hdx_logging module<a class="headerlink" href="#module-hdx.hdx_logging" title="Permalink to this headline">¶</a></h2>
+<p>Configuration of logging</p>
+<dl class="exception">
+<dt id="hdx.hdx_logging.LoggingError">
+<em class="property">exception </em><code class="descclassname">hdx.hdx_logging.</code><code class="descname">LoggingError</code><a class="headerlink" href="#hdx.hdx_logging.LoggingError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hdx.hdx_logging.setup_logging">
+<code class="descclassname">hdx.hdx_logging.</code><code class="descname">setup_logging</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.hdx_logging.setup_logging" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup logging configuration</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>**kwargs</strong> – See below</li>
+<li><strong>logging_config_dict</strong> (<em>dict</em>) – Logging configuration dictionary OR</li>
+<li><strong>logging_config_json</strong> (<em>str</em>) – Path to JSON Logging configuration OR</li>
+<li><strong>logging_config_yaml</strong> (<em>str</em>) – Path to YAML Logging configuration. Defaults to internal logging_configuration.yml.</li>
+<li><strong>smtp_config_dict</strong> (<em>dict</em>) – Email Logging configuration dictionary if using default logging configuration OR</li>
+<li><strong>smtp_config_json</strong> (<em>str</em>) – Path to JSON Email Logging configuration if using default logging configuration OR</li>
+<li><strong>smtp_config_yaml</strong> (<em>str</em>) – Path to YAML Email Logging configuration if using default logging configuration</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdx">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hdx" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">hdx package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hdx.hdx_logging">hdx.hdx_logging module</a></li>
+<li><a class="reference internal" href="#module-hdx">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/source/hdx.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;Michael Rans.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/source/hdx.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
