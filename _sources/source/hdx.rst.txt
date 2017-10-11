@@ -8,18 +8,6 @@ Subpackages
 
     hdx.utilities
 
-Submodules
-----------
-
-hdx.hdx_logging module
-----------------------
-
-.. automodule:: hdx.hdx_logging
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 Module contents
 ---------------
 
