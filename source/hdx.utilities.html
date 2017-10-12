@@ -938,46 +938,62 @@ Must call setup_streaming_download method first.</p>
 <p>Location utilities</p>
 <dl class="class">
 <dt id="hdx.utilities.location.Location">
-<em class="property">class </em><code class="descclassname">hdx.utilities.location.</code><code class="descname">Location</code><span class="sig-paren">(</span><em>countries=None</em>, <em>url='http://api.worldbank.org/countries?format=json&amp;per_page=10000'</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">hdx.utilities.location.</code><code class="descname">Location</code><a class="headerlink" href="#hdx.utilities.location.Location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Location class with various methods to help with countries and regions. Uses World Bank API unless countries
-argument supplied with list of dicts of form:
-{‘name’: ‘Afghanistan’, ‘region’: {‘value’: ‘South Asia’, ‘id’: ‘SAS’}, ‘capitalCity’: ‘Kabul’, ‘id’: ‘AFG’,
-‘lendingType’: {‘value’: ‘IDA’, ‘id’: ‘IDX’}, ‘adminregion’: {‘value’: ‘South Asia’, ‘id’: ‘SAS’}, ‘iso2Code’: ‘AF’,
-‘longitude’: ‘69.1761’, ‘incomeLevel’: {‘value’: ‘Low income’, ‘id’: ‘LIC’}, ‘latitude’: ‘34.5228’}</p>
+<p>Location class with various methods to help with countries and regions. Uses World Bank API which supplies data
+in form:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;AFG&#39;</span><span class="p">,</span> <span class="s1">&#39;iso2Code&#39;</span><span class="p">:</span> <span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Afghanistan&#39;</span><span class="p">,</span>
+<span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="s1">&#39;34.5228&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="s1">&#39;69.1761&#39;</span><span class="p">,</span>
+<span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;SAS&#39;</span><span class="p">},</span>
+<span class="s1">&#39;adminregion&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;South Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;SAS&#39;</span><span class="p">},</span>
+<span class="s1">&#39;capitalCity&#39;</span><span class="p">:</span> <span class="s1">&#39;Kabul&#39;</span><span class="p">,</span>
+<span class="s1">&#39;lendingType&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;IDA&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;IDX&#39;</span><span class="p">},</span>
+<span class="s1">&#39;incomeLevel&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;Low income&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;LIC&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<dl class="staticmethod">
+<dt id="hdx.utilities.location.Location.countriesdata">
+<em class="property">static </em><code class="descname">countriesdata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.countriesdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read countries data from World Bank API (falling back to file)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>countries</strong> (<em>Optional</em><em>[</em><em>List</em><em>]</em>) – List of countries in same format as World Bank API. Defaults to None.</li>
-<li><strong>url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – URL of World Bank API. Defaults to ‘<a class="reference external" href="http://api.worldbank.org/countries?format=json&amp;per_page=10000">http://api.worldbank.org/countries?format=json&amp;per_page=10000</a>’.</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Countries dictionaries</td>
 </tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="hdx.utilities.location.Location.get_countries_in_region">
-<code class="descname">get_countries_in_region</code><span class="sig-paren">(</span><em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get countries (iso 3 codes) in continent</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>str</em>) – Three letter region code or region name</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Sorted list of iso 3 country names</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List(str)</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[Dict[Dict]]</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
+<dt id="hdx.utilities.location.Location.get_countries_in_region">
+<em class="property">static </em><code class="descname">get_countries_in_region</code><span class="sig-paren">(</span><em>region</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_countries_in_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get countries (iso 3 codes) in continent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>region</strong> (<em>str</em>) – Three letter region code or region name</li>
+<li><strong>exception</strong> (<em>Optional</em><em>[</em><em>ExceptionUpperBound</em><em>]</em>) – An exception to raise if region not found. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Sorted list of iso 3 country names</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List(str)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_country_info_from_iso2">
-<code class="descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_country_info_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_info_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from iso2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -999,9 +1015,9 @@ argument supplied with list of dicts of form:
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_country_info_from_iso3">
-<code class="descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_country_info_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_info_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country information from iso3 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1023,9 +1039,9 @@ argument supplied with list of dicts of form:
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_country_name_from_iso2">
-<code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_country_name_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_name_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from iso2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1047,9 +1063,9 @@ argument supplied with list of dicts of form:
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_country_name_from_iso3">
-<code class="descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_country_name_from_iso3</code><span class="sig-paren">(</span><em>iso3</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_country_name_from_iso3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get country name from iso3 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1071,9 +1087,9 @@ argument supplied with list of dicts of form:
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_iso3_country_code">
-<code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_iso3_country_code</code><span class="sig-paren">(</span><em>country</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_iso3_country_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso 3 code for country. Only exact matches or None are returned.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1095,9 +1111,9 @@ argument supplied with list of dicts of form:
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_iso3_country_code_partial">
-<code class="descname">get_iso3_country_code_partial</code><span class="sig-paren">(</span><em>country</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_iso3_country_code_partial" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_iso3_country_code_partial</code><span class="sig-paren">(</span><em>country</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_iso3_country_code_partial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso 3 code for country. A tuple is returned with the first value being the iso 3 code and the second
 showing if the match is exact or not.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -1113,16 +1129,16 @@ showing if the match is exact or not.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Return iso 3 code and if the match is exact or (None, False).</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Tuple[Optional[str], bool]]</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Tuple[[Optional[str], bool]]</p>
 </td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<dl class="method">
+<dl class="staticmethod">
 <dt id="hdx.utilities.location.Location.get_iso3_from_iso2">
-<code class="descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_iso3_from_iso2</code><span class="sig-paren">(</span><em>iso2</em>, <em>exception=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.get_iso3_from_iso2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get iso3 from iso2 code</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1139,6 +1155,39 @@ showing if the match is exact or not.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Optional[str]</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.utilities.location.Location.set_countriesdata">
+<em class="property">static </em><code class="descname">set_countriesdata</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.set_countriesdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up countries data from data in form provided by World Bank</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Dict</em><em>]</em><em>]</em>) – Countries data in form provided by World Bank</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.utilities.location.Location.set_data_url">
+<em class="property">static </em><code class="descname">set_data_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.location.Location.set_data_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set url from which to retrieve countries data. Setting it to None avoids using the network and instead uses
+the internal fallback file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Url from which to retrieve countries data. Set to None to use fallback file.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
 </tr>
 </tbody>
 </table>
