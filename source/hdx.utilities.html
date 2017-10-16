@@ -681,9 +681,7 @@ Must call setup_streaming_download method first.</p>
 </div>
 <div class="section" id="module-hdx.utilities.email">
 <span id="hdx-utilities-email-module"></span><h2>hdx.utilities.email module<a class="headerlink" href="#module-hdx.utilities.email" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="emailer">
-<h3>Emailer:<a class="headerlink" href="#emailer" title="Permalink to this headline">¶</a></h3>
-<p>Utility to simplify sending emails</p>
+<p>Utility class to simplify sending emails</p>
 <dl class="class">
 <dt id="hdx.utilities.email.Email">
 <em class="property">class </em><code class="descclassname">hdx.utilities.email.</code><code class="descname">Email</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.email.Email" title="Permalink to this definition">¶</a></dt>
@@ -784,6 +782,69 @@ Must call setup_streaming_download method first.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-hdx.utilities.html">
+<span id="hdx-utilities-html-module"></span><h2>hdx.utilities.html module<a class="headerlink" href="#module-hdx.utilities.html" title="Permalink to this headline">¶</a></h2>
+<p>HTML parsing utilities</p>
+<dl class="function">
+<dt id="hdx.utilities.html.extract_table">
+<code class="descclassname">hdx.utilities.html.</code><code class="descname">extract_table</code><span class="sig-paren">(</span><em>tabletag</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.html.extract_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract HTML table as list of dictionaries</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tabletag</strong> (<em>Tag</em>) – BeautifulSoup tag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Text of tag stripped of leading and trailing whitespace and newlines and with &amp;nbsp replaced with space</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="hdx.utilities.html.get_soup">
+<code class="descclassname">hdx.utilities.html.</code><code class="descname">get_soup</code><span class="sig-paren">(</span><em>url</em>, <em>downloader=&lt;hdx.utilities.downloader.Download object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.html.get_soup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get BeautifulSoup object for a url</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – url to read</li>
+<li><strong>downloader</strong> (<a class="reference internal" href="#hdx.utilities.downloader.Download" title="hdx.utilities.downloader.Download"><em>Download</em></a>) – Download object. Defaults to Download().</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The BeautifulSoup object for a url</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">BeautifulSoup</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="hdx.utilities.html.get_text">
+<code class="descclassname">hdx.utilities.html.</code><code class="descname">get_text</code><span class="sig-paren">(</span><em>tag</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.html.get_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get text of tag stripped of leading and trailing whitespace and newlines and with &amp;nbsp replaced with space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tag</strong> (<em>Tag</em>) – BeautifulSoup tag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Text of tag stripped of leading and trailing whitespace and newlines and with &amp;nbsp replaced with space</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </div>
 <div class="section" id="module-hdx.utilities.loader">
 <span id="hdx-utilities-loader-module"></span><h2>hdx.utilities.loader module<a class="headerlink" href="#module-hdx.utilities.loader" title="Permalink to this headline">¶</a></h2>
@@ -1161,10 +1222,8 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
 <li><a class="reference internal" href="#module-hdx.utilities.dictandlist">hdx.utilities.dictandlist module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.downloader">hdx.utilities.downloader module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.easy_logging">hdx.utilities.easy_logging module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.email">hdx.utilities.email module</a><ul>
-<li><a class="reference internal" href="#emailer">Emailer:</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#module-hdx.utilities.email">hdx.utilities.email module</a></li>
+<li><a class="reference internal" href="#module-hdx.utilities.html">hdx.utilities.html module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.loader">hdx.utilities.loader module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.path">hdx.utilities.path module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.session">hdx.utilities.session module</a></li>

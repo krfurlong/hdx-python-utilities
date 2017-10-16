@@ -36,6 +36,14 @@ hdx.utilities.email module
     :undoc-members:
     :show-inheritance:
 
+hdx.utilities.html module
+-------------------------
+
+.. automodule:: hdx.utilities.html
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 hdx.utilities.loader module
 ---------------------------
 
