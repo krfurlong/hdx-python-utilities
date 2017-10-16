@@ -44,14 +44,6 @@ hdx.utilities.loader module
     :undoc-members:
     :show-inheritance:
 
-hdx.utilities.location module
------------------------------
-
-.. automodule:: hdx.utilities.location
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 hdx.utilities.path module
 -------------------------
 
