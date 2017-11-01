@@ -402,7 +402,7 @@ like dictionaries in which case the function can return the appropriate value eg
 <dt id="hdx.utilities.downloader.Download">
 <em class="property">class </em><code class="descclassname">hdx.utilities.downloader.</code><code class="descname">Download</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>Download class with various download operations.</p>
+<p>Download class with various download operations. Currently only GET requests are used and supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -423,6 +423,34 @@ like dictionaries in which case the function can return the appropriate value eg
 </tbody>
 </table>
 <dl class="method">
+<dt id="hdx.utilities.downloader.Download.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close response and session</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hdx.utilities.downloader.Download.close_response">
+<code class="descname">close_response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.close_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="hdx.utilities.downloader.Download.download">
 <code class="descname">download</code><span class="sig-paren">(</span><em>url</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download url</p>
@@ -440,85 +468,6 @@ like dictionaries in which case the function can return the appropriate value eg
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">requests.Response</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="hdx.utilities.downloader.Download.download_csv_cols_as_dicts">
-<em class="property">static </em><code class="descname">download_csv_cols_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>delimiter='</em>, <em>'</em>, <em>headers=1</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_csv_cols_as_dicts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download multicolumn csv from url and return dictionary where keys are header names and values are
-dictionaries with keys from first column and values from other columns</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>url</strong> (<em>str</em>) – URL to download</li>
-<li><strong>delimiter</strong> (<em>str</em>) – Delimiter for each row in csv. Defaults to ‘,’.</li>
-<li><strong>headers</strong> (<em>int</em>) – Number of row containing headers. Defaults to 1.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary where keys are header names and values are dictionaries with keys from first column
-and values from other columns</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dict[Dict]</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="hdx.utilities.downloader.Download.download_csv_key_value">
-<em class="property">static </em><code class="descname">download_csv_key_value</code><span class="sig-paren">(</span><em>url</em>, <em>delimiter='</em>, <em>'</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_csv_key_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download 2 column csv from url and return a dictionary of keys (first column) and values (second column)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>url</strong> (<em>str</em>) – URL to download</li>
-<li><strong>delimiter</strong> (<em>str</em>) – Delimiter for each row in csv. Defaults to ‘,’.</li>
-<li><strong>headers</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of row containing headers. Defaults to None.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary keys (first column) and values (second column)</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dict</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="staticmethod">
-<dt id="hdx.utilities.downloader.Download.download_csv_rows_as_dicts">
-<em class="property">static </em><code class="descname">download_csv_rows_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>delimiter='</em>, <em>'</em>, <em>headers=1</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_csv_rows_as_dicts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Download multicolumn csv from url and return dictionary where keys are first column and values are
-dictionaries with keys from column headers and values from columns beneath</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>url</strong> (<em>str</em>) – URL to download</li>
-<li><strong>delimiter</strong> (<em>str</em>) – Delimiter for each row in csv. Defaults to ‘,’.</li>
-<li><strong>headers</strong> (<em>int</em>) – Number of row containing headers. Defaults to 1.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary where keys are first column and values are dictionaries with keys from column
-headers and values from columns beneath</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dict[Dict]</p>
 </td>
 </tr>
 </tbody>
@@ -551,16 +500,101 @@ headers and values from columns beneath</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="hdx.utilities.downloader.Download.get_extra_params">
-<code class="descname">get_extra_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_extra_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get extra parameters to put on end of url as a dictionary</p>
+<dt id="hdx.utilities.downloader.Download.download_tabular_cols_as_dicts">
+<code class="descname">download_tabular_cols_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>headers=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_cols_as_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download multicolumn csv from url and return dictionary where keys are header names and values are
+dictionaries with keys from first column and values from other columns</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Extra parameters to put on end of url as a dictionary</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>**kwargs</strong> – </li>
+<li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
+<li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Dict[str, str]</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary where keys are header names and values are dictionaries with keys from first column
+and values from other columns</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dict[Dict]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hdx.utilities.downloader.Download.download_tabular_key_value">
+<code class="descname">download_tabular_key_value</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_key_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download 2 column csv from url and return a dictionary of keys (first column) and values (second column)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>**kwargs</strong> – </li>
+<li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
+<li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary keys (first column) and values (second column)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hdx.utilities.downloader.Download.download_tabular_rows_as_dicts">
+<code class="descname">download_tabular_rows_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>headers=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_rows_as_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download multicolumn csv from url and return dictionary where keys are first column and values are
+dictionaries with keys from column headers and values from columns beneath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>**kwargs</strong> – </li>
+<li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
+<li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Dictionary where keys are first column and values are dictionaries with keys from column
+headers and values from columns beneath</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Dict[Dict]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hdx.utilities.downloader.Download.get_full_url">
+<code class="descname">get_full_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_full_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get full url including any additional parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns full url including any additional parameters</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
 </tr>
 </tbody>
 </table>
@@ -584,6 +618,61 @@ headers and values from columns beneath</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hdx.utilities.downloader.Download.get_tabular_rows">
+<code class="descname">get_tabular_rows</code><span class="sig-paren">(</span><em>url</em>, <em>dict_rows=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_tabular_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iterator for reading rows from tabular data. Each row is returned as a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>dict_rows</strong> (<em>bool</em>) – Return dict (requires headers parameter) or list for each row. Defaults to False (list).</li>
+<li><strong>**kwargs</strong> – </li>
+<li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
+<li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns Iterator where each row is returned as a dictionary.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Iterator[Dict]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hdx.utilities.downloader.Download.get_tabular_stream">
+<code class="descname">get_tabular_stream</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_tabular_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get iterator for reading rows from tabular data. Each row is returned as a dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>**kwargs</strong> – </li>
+<li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
+<li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns Tabulator Stream object.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tabulator.Stream</p>
 </td>
 </tr>
 </tbody>
