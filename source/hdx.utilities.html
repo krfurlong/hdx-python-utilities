@@ -592,7 +592,7 @@ headers and values from columns beneath</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns full url including any additional parameters</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Full url including any additional parameters</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
 </tr>
@@ -642,7 +642,7 @@ headers and values from columns beneath</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns Iterator where each row is returned as a dictionary.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Iterator where each row is returned as a dictionary.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Iterator[Dict]</p>
@@ -669,7 +669,7 @@ headers and values from columns beneath</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns Tabulator Stream object.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Tabulator Stream object.</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tabulator.Stream</p>
@@ -1261,6 +1261,24 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
 <dd>str: String containing matching blocks of text followed by non-matching</dd>
 </dl>
 </div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="hdx.utilities.text.get_words_in_sentence">
+<code class="descclassname">hdx.utilities.text.</code><code class="descname">get_words_in_sentence</code><span class="sig-paren">(</span><em>sentence</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.text.get_words_in_sentence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of words in a sentence</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sentence</strong> (<em>str</em>) – Sentence</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of words in sentence</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[str]</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
