@@ -119,6 +119,28 @@
 </dd></dl>
 
 <dl class="function">
+<dt id="hdx.utilities.dictandlist.dict_of_sets_add">
+<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">dict_of_sets_add</code><span class="sig-paren">(</span><em>dictionary</em>, <em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.dict_of_sets_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add value to a set in a dictionary by key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dictionary</strong> (<em>DictUpperBound</em>) – Dictionary to which to add values</li>
+<li><strong>key</strong> (<em>Any</em>) – Key within dictionary</li>
+<li><strong>value</strong> (<em>Any</em>) – Value to add to set in dictionary</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="hdx.utilities.dictandlist.extract_list_from_list_of_dict">
 <code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">extract_list_from_list_of_dict</code><span class="sig-paren">(</span><em>list_of_dict</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.extract_list_from_list_of_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract a list by looking up key in each member of a list of dictionaries</p>
@@ -152,7 +174,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dictin</strong> (<em>DictUpperBound</em>) – Input dictionary</li>
-<li><strong>dropfailedkeys</strong> (<em>bool</em>) – Whether to drop dictionary entries where key conversion fails. Defaults to False.</li>
+<li><strong>dropfailedvalues</strong> (<em>bool</em>) – Whether to drop dictionary entries where key conversion fails. Defaults to False.</li>
 </ul>
 </td>
 </tr>
@@ -200,7 +222,7 @@
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dictin</strong> (<em>DictUpperBound</em>) – Input dictionary</li>
-<li><strong>dropfailedkeys</strong> (<em>bool</em>) – Whether to drop dictionary entries where key conversion fails. Defaults to False.</li>
+<li><strong>dropfailedvalues</strong> (<em>bool</em>) – Whether to drop dictionary entries where key conversion fails. Defaults to False.</li>
 </ul>
 </td>
 </tr>
@@ -1389,7 +1411,7 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
       &copy;Michael Rans.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
