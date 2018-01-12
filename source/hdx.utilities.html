@@ -498,7 +498,7 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.download_file">
-<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>filename=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download file from url and store in provided folder or temporary folder if no folder supplied</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -507,6 +507,7 @@ like dictionaries in which case the function can return the appropriate value eg
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
 <li><strong>folder</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Folder to download it to. Defaults to None.</li>
+<li><strong>filename</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filename to use for downloaded file. Defaults to None (derive from the url).</li>
 <li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
 </ul>
 </td>
@@ -624,7 +625,7 @@ headers and values from columns beneath</p>
 
 <dl class="staticmethod">
 <dt id="hdx.utilities.downloader.Download.get_path_for_url">
-<em class="property">static </em><code class="descname">get_path_for_url</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_path_for_url" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="descname">get_path_for_url</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_path_for_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get filename from url and join to provided folder or temporary folder if no folder supplied, ensuring uniqueness</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -633,6 +634,7 @@ headers and values from columns beneath</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
 <li><strong>folder</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Folder to download it to. Defaults to None (temporary folder).</li>
+<li><strong>filename</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filename to use for downloaded file. Defaults to None (derive from the url).</li>
 </ul>
 </td>
 </tr>
@@ -739,7 +741,7 @@ headers and values from columns beneath</p>
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.stream_file">
-<code class="descname">stream_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.stream_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stream_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.stream_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream file from url and store in provided folder or temporary folder if no folder supplied.
 Must call setup_streaming_download method first.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -749,6 +751,7 @@ Must call setup_streaming_download method first.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
 <li><strong>folder</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Folder to download it to. Defaults to None (temporary folder).</li>
+<li><strong>filename</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filename to use for downloaded file. Defaults to None (derive from the url).</li>
 </ul>
 </td>
 </tr>
