@@ -366,15 +366,14 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="function">
 <dt id="hdx.utilities.dictandlist.read_list_from_csv">
-<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">read_list_from_csv</code><span class="sig-paren">(</span><em>folder</em>, <em>filename</em>, <em>dict_form=False</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.read_list_from_csv" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">read_list_from_csv</code><span class="sig-paren">(</span><em>filepath</em>, <em>dict_form=False</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.read_list_from_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a list of rows in dict or list form from a csv.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>folder</strong> (<em>str</em>) – Folder to write to</li>
-<li><strong>filename</strong> (<em>str</em>) – Name of file to write to</li>
+<li><strong>filepath</strong> (<em>str</em>) – Path to read from</li>
 <li><strong>dict_form</strong> (<em>bool</em>) – Return in dict form. Defaults to False.</li>
 <li><strong>headers</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Row number of headers. Defaults to None.</li>
 </ul>
@@ -392,7 +391,7 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="function">
 <dt id="hdx.utilities.dictandlist.write_list_to_csv">
-<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">write_list_to_csv</code><span class="sig-paren">(</span><em>list_of_rows</em>, <em>folder</em>, <em>filename</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.write_list_to_csv" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">write_list_to_csv</code><span class="sig-paren">(</span><em>list_of_rows</em>, <em>filepath</em>, <em>headers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.write_list_to_csv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a list of rows in dict or list form to a csv.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -400,8 +399,7 @@ like dictionaries in which case the function can return the appropriate value eg
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>list_of_rows</strong> (<em>List</em><em>[</em><em>Union</em><em>[</em><em>DictUpperBound</em><em>, </em><em>List</em><em>]</em><em>]</em>) – List of rows in dict or list form</li>
-<li><strong>folder</strong> (<em>str</em>) – Folder to write to</li>
-<li><strong>filename</strong> (<em>str</em>) – Name of file to write to</li>
+<li><strong>filepath</strong> (<em>str</em>) – Path to write to</li>
 <li><strong>headers</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Headers to write. Defaults to None.</li>
 </ul>
 </td>
