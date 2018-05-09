@@ -44,6 +44,57 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="module-hdx.utilities.compare">
+<span id="hdx-utilities-compare-module"></span><h2>hdx.utilities.compare module<a class="headerlink" href="#module-hdx.utilities.compare" title="Permalink to this headline">¶</a></h2>
+<p>File compare utilities</p>
+<dl class="function">
+<dt id="hdx.utilities.compare.assert_files_same">
+<code class="descclassname">hdx.utilities.compare.</code><code class="descname">assert_files_same</code><span class="sig-paren">(</span><em>path1</em>, <em>path2</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.compare.assert_files_same" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asserts that two files are the same and returns delta using
+-, ?, + format if not</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path1</strong> (<em>str</em>) – Path to first file</li>
+<li><strong>path2</strong> (<em>str</em>) – Path to second file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="hdx.utilities.compare.compare_files">
+<code class="descclassname">hdx.utilities.compare.</code><code class="descname">compare_files</code><span class="sig-paren">(</span><em>path1</em>, <em>path2</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.compare.compare_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the delta between two files using -, ?, + format excluding
+lines that are the same</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path1</strong> (<em>str</em>) – Path to first file</li>
+<li><strong>path2</strong> (<em>str</em>) – Path to second file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Delta between the two files</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[str]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="module-hdx.utilities.dictandlist">
 <span id="hdx-utilities-dictandlist-module"></span><h2>hdx.utilities.dictandlist module<a class="headerlink" href="#module-hdx.utilities.dictandlist" title="Permalink to this headline">¶</a></h2>
 <p>Dict and List utilities</p>
@@ -1176,6 +1227,56 @@ Must call setup_streaming_download method first.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-hdx.utilities.saver">
+<span id="hdx-utilities-saver-module"></span><h2>hdx.utilities.saver module<a class="headerlink" href="#module-hdx.utilities.saver" title="Permalink to this headline">¶</a></h2>
+<p>Saving utilities for YAML, JSON etc.</p>
+<dl class="function">
+<dt id="hdx.utilities.saver.save_json">
+<code class="descclassname">hdx.utilities.saver.</code><code class="descname">save_json</code><span class="sig-paren">(</span><em>dictionary</em>, <em>path</em>, <em>pretty=False</em>, <em>sortkeys=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.saver.save_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save dictionary to JSON file preserving order if it is an OrderedDict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dictionary</strong> (<em>Dict</em>) – Python dictionary to save</li>
+<li><strong>path</strong> (<em>str</em>) – Path to JSON file</li>
+<li><strong>pretty</strong> (<em>bool</em>) – Whether to pretty print. Defaults to False.</li>
+<li><strong>sortkeys</strong> (<em>bool</em>) – Whether to sort dictionary keys. Defaults to False.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="hdx.utilities.saver.save_yaml">
+<code class="descclassname">hdx.utilities.saver.</code><code class="descname">save_yaml</code><span class="sig-paren">(</span><em>dictionary</em>, <em>path</em>, <em>pretty=False</em>, <em>sortkeys=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.saver.save_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save dictionary to YAML file preserving order if it is an OrderedDict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dictionary</strong> (<em>Dict</em>) – Python dictionary to save</li>
+<li><strong>path</strong> (<em>str</em>) – Path to YAML file</li>
+<li><strong>pretty</strong> (<em>bool</em>) – Whether to pretty print. Defaults to False.</li>
+<li><strong>sortkeys</strong> (<em>bool</em>) – Whether to sort dictionary keys. Defaults to False.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 <div class="section" id="module-hdx.utilities.session">
 <span id="hdx-utilities-session-module"></span><h2>hdx.utilities.session module<a class="headerlink" href="#module-hdx.utilities.session" title="Permalink to this headline">¶</a></h2>
 <p>Session utilities for urls</p>
@@ -1366,6 +1467,7 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
   <ul>
 <li><a class="reference internal" href="#">hdx.utilities package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hdx.utilities.compare">hdx.utilities.compare module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.dictandlist">hdx.utilities.dictandlist module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.downloader">hdx.utilities.downloader module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.easy_logging">hdx.utilities.easy_logging module</a></li>
@@ -1373,6 +1475,7 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
 <li><a class="reference internal" href="#module-hdx.utilities.html">hdx.utilities.html module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.loader">hdx.utilities.loader module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.path">hdx.utilities.path module</a></li>
+<li><a class="reference internal" href="#module-hdx.utilities.saver">hdx.utilities.saver module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.session">hdx.utilities.session module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities.text">hdx.utilities.text module</a></li>
 <li><a class="reference internal" href="#module-hdx.utilities">Module contents</a></li>
