@@ -571,7 +571,7 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.download_tabular_cols_as_dicts">
-<code class="descname">download_tabular_cols_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>headers=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_cols_as_dicts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download_tabular_cols_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>headers=1</em>, <em>keycolumn=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_cols_as_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download multicolumn csv from url and return dictionary where keys are header names and values are
 dictionaries with keys from first column and values from other columns</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -581,6 +581,7 @@ dictionaries with keys from first column and values from other columns</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
 <li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>keycolumn</strong> (<em>int</em>) – Number of column to be used for key. Defaults to 1.</li>
 <li><strong>**kwargs</strong> – </li>
 <li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
 <li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
@@ -627,7 +628,7 @@ and values from other columns</p>
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.download_tabular_rows_as_dicts">
-<code class="descname">download_tabular_rows_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>headers=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_rows_as_dicts" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download_tabular_rows_as_dicts</code><span class="sig-paren">(</span><em>url</em>, <em>headers=1</em>, <em>keycolumn=1</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_tabular_rows_as_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download multicolumn csv from url and return dictionary where keys are first column and values are
 dictionaries with keys from column headers and values from columns beneath</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -637,6 +638,7 @@ dictionaries with keys from column headers and values from columns beneath</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
 <li><strong>headers</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>int</em><em>]</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Number of row(s) containing headers or list of headers. Defaults to 1.</li>
+<li><strong>keycolumn</strong> (<em>int</em>) – Number of column to be used for key. Defaults to 1.</li>
 <li><strong>**kwargs</strong> – </li>
 <li><strong>file_type</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Type of file. Defaults to inferring.</li>
 <li><strong>delimiter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Delimiter used for values in each row. Defaults to inferring.</li>
