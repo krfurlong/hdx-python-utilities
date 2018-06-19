@@ -100,7 +100,7 @@ lines that are the same</p>
 <p>Dict and List utilities</p>
 <dl class="function">
 <dt id="hdx.utilities.dictandlist.avg_dicts">
-<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">avg_dicts</code><span class="sig-paren">(</span><em>dictin1</em>, <em>dictin2</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.avg_dicts" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">avg_dicts</code><span class="sig-paren">(</span><em>dictin1</em>, <em>dictin2</em>, <em>dropmissing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.avg_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new dictionary from two dictionaries by averaging values</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -109,6 +109,7 @@ lines that are the same</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dictin1</strong> (<em>DictUpperBound</em>) – First input dictionary</li>
 <li><strong>dictin2</strong> (<em>DictUpperBound</em>) – Second input dictionary</li>
+<li><strong>dropmissing</strong> (<em>bool</em>) – Whether to drop keys missing in one dictionary</li>
 </ul>
 </td>
 </tr>
