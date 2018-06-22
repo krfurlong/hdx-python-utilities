@@ -100,7 +100,7 @@ lines that are the same</p>
 <p>Dict and List utilities</p>
 <dl class="function">
 <dt id="hdx.utilities.dictandlist.avg_dicts">
-<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">avg_dicts</code><span class="sig-paren">(</span><em>dictin1</em>, <em>dictin2</em>, <em>dropmissing=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.avg_dicts" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">hdx.utilities.dictandlist.</code><code class="descname">avg_dicts</code><span class="sig-paren">(</span><em>dictin1</em>, <em>dictin2</em>, <em>dropmissing=True</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.dictandlist.avg_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new dictionary from two dictionaries by averaging values</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -109,7 +109,7 @@ lines that are the same</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>dictin1</strong> (<em>DictUpperBound</em>) – First input dictionary</li>
 <li><strong>dictin2</strong> (<em>DictUpperBound</em>) – Second input dictionary</li>
-<li><strong>dropmissing</strong> (<em>bool</em>) – Whether to drop keys missing in one dictionary</li>
+<li><strong>dropmissing</strong> (<em>bool</em>) – Whether to drop keys missing in one dictionary. Defaults to True.</li>
 </ul>
 </td>
 </tr>
@@ -521,7 +521,7 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.download">
-<code class="descname">download</code><span class="sig-paren">(</span><em>url</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download</code><span class="sig-paren">(</span><em>url</em>, <em>post=False</em>, <em>parameters=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download url</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -529,6 +529,8 @@ like dictionaries in which case the function can return the appropriate value eg
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>post</strong> (<em>bool</em>) – Whether to use POST instead of GET. Defaults to False.</li>
+<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
 <li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
 </ul>
 </td>
@@ -545,7 +547,7 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.download_file">
-<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>filename=None</em>, <em>timeout=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>post=False</em>, <em>parameters=None</em>, <em>folder=None</em>, <em>filename=None</em>, <em>overwrite=False</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download file from url and store in provided folder or temporary folder if no folder supplied</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -553,10 +555,12 @@ like dictionaries in which case the function can return the appropriate value eg
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
-<li><strong>filename</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filename to use for downloaded file. Defaults to None (derive from the url).</li>
-<li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
+<li><strong>post</strong> (<em>bool</em>) – Whether to use POST instead of GET. Defaults to False.</li>
+<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
 <li><strong>folder</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Folder to download it to. Defaults to None.</li>
+<li><strong>filename</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filename to use for downloaded file. Defaults to None (derive from the url).</li>
 <li><strong>overwrite</strong> (<em>bool</em>) – Whether to overwrite existing file. Defaults to False.</li>
+<li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
 </ul>
 </td>
 </tr>
@@ -754,6 +758,54 @@ headers and values from columns beneath</p>
 </table>
 </dd></dl>
 
+<dl class="staticmethod">
+<dt id="hdx.utilities.downloader.Download.get_url_for_get">
+<em class="property">static </em><code class="descname">get_url_for_get</code><span class="sig-paren">(</span><em>url</em>, <em>parameters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_url_for_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get full url for GET request including parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Full url</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="hdx.utilities.downloader.Download.get_url_params_for_post">
+<em class="property">static </em><code class="descname">get_url_params_for_post</code><span class="sig-paren">(</span><em>url</em>, <em>parameters=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.get_url_params_for_post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get full url for POST request and all parameters including any in the url</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">(Full url, parameters)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Tuple[str, Dict]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.hash_stream">
 <code class="descname">hash_stream</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.hash_stream" title="Permalink to this definition">¶</a></dt>
@@ -774,16 +826,21 @@ headers and values from columns beneath</p>
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.setup_stream">
-<code class="descname">setup_stream</code><span class="sig-paren">(</span><em>url</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.setup_stream" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setup_stream</code><span class="sig-paren">(</span><em>url</em>, <em>post=False</em>, <em>parameters=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.setup_stream" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup streaming download from provided url</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>post</strong> (<em>bool</em>) – Whether to use POST instead of GET. Defaults to False.</li>
+<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
 <li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
 </td>
 </tr>
 </tbody>
