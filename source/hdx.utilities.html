@@ -547,7 +547,7 @@ like dictionaries in which case the function can return the appropriate value eg
 
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.download_file">
-<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>post=False</em>, <em>parameters=None</em>, <em>folder=None</em>, <em>filename=None</em>, <em>overwrite=False</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_file" title="Permalink to this definition">¶</a></dt>
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>filename=None</em>, <em>overwrite=False</em>, <em>post=False</em>, <em>parameters=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.download_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Download file from url and store in provided folder or temporary folder if no folder supplied</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -555,11 +555,11 @@ like dictionaries in which case the function can return the appropriate value eg
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
-<li><strong>post</strong> (<em>bool</em>) – Whether to use POST instead of GET. Defaults to False.</li>
-<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
 <li><strong>folder</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Folder to download it to. Defaults to None.</li>
 <li><strong>filename</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filename to use for downloaded file. Defaults to None (derive from the url).</li>
 <li><strong>overwrite</strong> (<em>bool</em>) – Whether to overwrite existing file. Defaults to False.</li>
+<li><strong>post</strong> (<em>bool</em>) – Whether to use POST instead of GET. Defaults to False.</li>
+<li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
 <li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
 </ul>
 </td>
@@ -748,7 +748,7 @@ headers and values from columns beneath</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Tabulator Stream object.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Tabulator Stream object</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tabulator.Stream</p>
@@ -809,7 +809,7 @@ headers and values from columns beneath</p>
 <dl class="method">
 <dt id="hdx.utilities.downloader.Download.hash_stream">
 <code class="descname">hash_stream</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.hash_stream" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stream file from url and hash it using MD5. Must call setup_streaming_download method first.</p>
+<dd><p>Stream file from url and hash it using MD5. Must call setup method first.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -825,22 +825,26 @@ headers and values from columns beneath</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="hdx.utilities.downloader.Download.setup_stream">
-<code class="descname">setup_stream</code><span class="sig-paren">(</span><em>url</em>, <em>post=False</em>, <em>parameters=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.setup_stream" title="Permalink to this definition">¶</a></dt>
-<dd><p>Setup streaming download from provided url</p>
+<dt id="hdx.utilities.downloader.Download.setup">
+<code class="descname">setup</code><span class="sig-paren">(</span><em>url</em>, <em>stream=True</em>, <em>post=False</em>, <em>parameters=None</em>, <em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup download from provided url returning the response</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>url</strong> (<em>str</em>) – URL to download</li>
+<li><strong>stream</strong> (<em>bool</em>) – Whether to stream download. Defaults to True.</li>
 <li><strong>post</strong> (<em>bool</em>) – Whether to use POST instead of GET. Defaults to False.</li>
 <li><strong>parameters</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>]</em>) – Parameters to pass. Defaults to None.</li>
 <li><strong>timeout</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Timeout for connecting to URL. Defaults to None (no timeout).</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">requests.Response object</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">requests.Response</p>
 </td>
 </tr>
 </tbody>
@@ -851,7 +855,7 @@ headers and values from columns beneath</p>
 <dt id="hdx.utilities.downloader.Download.stream_file">
 <code class="descname">stream_file</code><span class="sig-paren">(</span><em>url</em>, <em>folder=None</em>, <em>filename=None</em>, <em>overwrite=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download.stream_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stream file from url and store in provided folder or temporary folder if no folder supplied.
-Must call setup_streaming_download method first.</p>
+Must call setup method first.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
