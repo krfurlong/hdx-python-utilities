@@ -477,7 +477,7 @@ like dictionaries in which case the function can return the appropriate value eg
 <li><strong>extra_params_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Extra parameters to put on end of url as a dictionary OR</li>
 <li><strong>extra_params_json</strong> (<em>str</em>) – Path to JSON file containing extra parameters to put on end of url OR</li>
 <li><strong>extra_params_yaml</strong> (<em>str</em>) – Path to YAML file containing extra parameters to put on end of url</li>
-<li><strong>extra_params_key</strong> (<em>str</em>) – Key to look up parameters. If not given assumes parameters are at root of the dict.</li>
+<li><strong>extra_params_lookup</strong> (<em>str</em>) – Lookup key for parameters. If not given assumes parameters are at root of the dict.</li>
 <li><strong>status_forcelist</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – HTTP statuses for which to force retry</li>
 <li><strong>method_whitelist</strong> (<em>iterable</em>) – HTTP methods for which to force retry. Defaults t0 frozenset([‘GET’]).</li>
 </ul>
@@ -1378,7 +1378,7 @@ Must call setup method first.</p>
 <li><strong>extra_params_dict</strong> (<em>Dict</em>) – Extra parameters to put on end of url as a dictionary OR</li>
 <li><strong>extra_params_json</strong> (<em>str</em>) – Path to JSON file containing extra parameters to put on end of url OR</li>
 <li><strong>extra_params_yaml</strong> (<em>str</em>) – Path to YAML file containing extra parameters to put on end of url</li>
-<li><strong>extra_params_key</strong> (<em>str</em>) – Key to look up parameters. If not given assumes parameters are at root of the dict.</li>
+<li><strong>extra_params_lookup</strong> (<em>str</em>) – Lookup key for parameters. If not given assumes parameters are at root of the dict.</li>
 <li><strong>status_forcelist</strong> (<em>iterable</em>) – HTTP statuses for which to force retry. Defaults to [429, 500, 502, 503, 504].</li>
 <li><strong>method_whitelist</strong> (<em>iterable</em>) – HTTP methods for which to force retry. Defaults t0 frozenset([‘GET’]).</li>
 </ul>
