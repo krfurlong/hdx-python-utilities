@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>hdx.utilities package &#8212; HDX Python Utilities 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '1.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
@@ -30,13 +22,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="hdx-utilities-package">
@@ -470,7 +463,7 @@ like dictionaries in which case the function can return the appropriate value eg
 <dl class="class">
 <dt id="hdx.utilities.downloader.Download">
 <em class="property">class </em><code class="descclassname">hdx.utilities.downloader.</code><code class="descname">Download</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.downloader.Download" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Download class with various download operations. Currently only GET requests are used and supported.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -484,6 +477,7 @@ like dictionaries in which case the function can return the appropriate value eg
 <li><strong>extra_params_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Extra parameters to put on end of url as a dictionary OR</li>
 <li><strong>extra_params_json</strong> (<em>str</em>) – Path to JSON file containing extra parameters to put on end of url OR</li>
 <li><strong>extra_params_yaml</strong> (<em>str</em>) – Path to YAML file containing extra parameters to put on end of url</li>
+<li><strong>extra_params_key</strong> (<em>str</em>) – Key to look up parameters. If not given assumes parameters are at root of the dict.</li>
 <li><strong>status_forcelist</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – HTTP statuses for which to force retry</li>
 <li><strong>method_whitelist</strong> (<em>iterable</em>) – HTTP methods for which to force retry. Defaults t0 frozenset([‘GET’]).</li>
 </ul>
@@ -669,9 +663,11 @@ headers and values from columns beneath</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Full url including any additional parameters</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> (<em>str</em>) – URL for which to get full url</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Full url including any additional parameters</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
 </tr>
 </tbody>
 </table>
@@ -899,7 +895,7 @@ Must call setup method first.</p>
 <dl class="exception">
 <dt id="hdx.utilities.downloader.DownloadError">
 <em class="property">exception </em><code class="descclassname">hdx.utilities.downloader.</code><code class="descname">DownloadError</code><a class="headerlink" href="#hdx.utilities.downloader.DownloadError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 </div>
@@ -909,7 +905,7 @@ Must call setup method first.</p>
 <dl class="exception">
 <dt id="hdx.utilities.easy_logging.LoggingError">
 <em class="property">exception </em><code class="descclassname">hdx.utilities.easy_logging.</code><code class="descname">LoggingError</code><a class="headerlink" href="#hdx.utilities.easy_logging.LoggingError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="function">
@@ -945,7 +941,7 @@ Must call setup method first.</p>
 <dl class="class">
 <dt id="hdx.utilities.email.Email">
 <em class="property">class </em><code class="descclassname">hdx.utilities.email.</code><code class="descname">Email</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#hdx.utilities.email.Email" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="docutils">
 <dt>Emailer utility. Parameters in dictionary or file (eg. yaml below):</dt>
 <dd><div class="first last line-block">
@@ -1038,7 +1034,7 @@ Must call setup method first.</p>
 <dl class="exception">
 <dt id="hdx.utilities.email.EmailConfigurationError">
 <em class="property">exception </em><code class="descclassname">hdx.utilities.email.</code><code class="descname">EmailConfigurationError</code><a class="headerlink" href="#hdx.utilities.email.EmailConfigurationError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 </div>
@@ -1112,7 +1108,7 @@ Must call setup method first.</p>
 <dl class="exception">
 <dt id="hdx.utilities.loader.LoadError">
 <em class="property">exception </em><code class="descclassname">hdx.utilities.loader.</code><code class="descname">LoadError</code><a class="headerlink" href="#hdx.utilities.loader.LoadError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="function">
@@ -1363,7 +1359,7 @@ Must call setup method first.</p>
 <dl class="exception">
 <dt id="hdx.utilities.session.SessionError">
 <em class="property">exception </em><code class="descclassname">hdx.utilities.session.</code><code class="descname">SessionError</code><a class="headerlink" href="#hdx.utilities.session.SessionError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="function">
@@ -1379,9 +1375,10 @@ Must call setup method first.</p>
 <li><strong>auth</strong> (<em>Tuple</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Authorisation information in tuple form (user, pass) OR</li>
 <li><strong>basic_auth</strong> (<em>str</em>) – Authorisation information in basic auth string form (Basic xxxxxxxxxxxxxxxx) OR</li>
 <li><strong>basic_auth_file</strong> (<em>str</em>) – Path to file containing authorisation information in basic auth string form (Basic xxxxxxxxxxxxxxxx)</li>
-<li><strong>extra_params_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Extra parameters to put on end of url as a dictionary OR</li>
+<li><strong>extra_params_dict</strong> (<em>Dict</em>) – Extra parameters to put on end of url as a dictionary OR</li>
 <li><strong>extra_params_json</strong> (<em>str</em>) – Path to JSON file containing extra parameters to put on end of url OR</li>
 <li><strong>extra_params_yaml</strong> (<em>str</em>) – Path to YAML file containing extra parameters to put on end of url</li>
+<li><strong>extra_params_key</strong> (<em>str</em>) – Key to look up parameters. If not given assumes parameters are at root of the dict.</li>
 <li><strong>status_forcelist</strong> (<em>iterable</em>) – HTTP statuses for which to force retry. Defaults to [429, 500, 502, 503, 504].</li>
 <li><strong>method_whitelist</strong> (<em>iterable</em>) – HTTP methods for which to force retry. Defaults t0 frozenset([‘GET’]).</li>
 </ul>
@@ -1539,29 +1536,25 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">hdx.utilities package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.compare">hdx.utilities.compare module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.dictandlist">hdx.utilities.dictandlist module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.downloader">hdx.utilities.downloader module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.easy_logging">hdx.utilities.easy_logging module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.email">hdx.utilities.email module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.html">hdx.utilities.html module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.loader">hdx.utilities.loader module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.path">hdx.utilities.path module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.saver">hdx.utilities.saver module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.session">hdx.utilities.session module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities.text">hdx.utilities.text module</a></li>
-<li><a class="reference internal" href="#module-hdx.utilities">Module contents</a></li>
+<h1 class="logo"><a href="../index.html">HDX Python Utilities</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">hdx.utilities package</a></li>
 </ul>
-</li>
-</ul>
+
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -1570,21 +1563,16 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
   </ul></li>
 </ul>
 </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/source/hdx.utilities.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1595,8 +1583,8 @@ end_characters (str): End characters to look for. Defaults to ‘.</dd>
       &copy;Michael Rans.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
       <a href="../_sources/source/hdx.utilities.rst.txt"
