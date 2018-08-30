@@ -952,6 +952,7 @@ Must call setup method first.</p>
 <div class="line">timeout: 3</div>
 <div class="line">username: “user”</div>
 <div class="line">password: “pass”</div>
+<div class="line">sender: “<a class="reference external" href="mailto:a&#37;&#52;&#48;b&#46;com">a<span>&#64;</span>b<span>&#46;</span>com</a>”    (if not supplied username is used as sender)</div>
 </div>
 </dd>
 </dl>
@@ -1011,11 +1012,11 @@ Must call setup method first.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>recipients</strong> (<em>str</em>) – Email recipient</li>
+<li><strong>recipients</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Email recipient</li>
 <li><strong>subject</strong> (<em>str</em>) – Email subject</li>
 <li><strong>text_body</strong> (<em>str</em>) – Plain text email body</li>
-<li><strong>html_body</strong> (<em>str</em>) – HTML email body</li>
-<li><strong>sender</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Email sender. Defaults to SMTP username.</li>
+<li><strong>html_body</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – HTML email body</li>
+<li><strong>sender</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Email sender. Defaults to global sender.</li>
 <li><strong>**kwargs</strong> – See below</li>
 <li><strong>mail_options</strong> (<em>list</em>) – Mail options (see smtplib documentation)</li>
 <li><strong>rcpt_options</strong> (<em>list</em>) – Recipient options (see smtplib documentation)</li>
