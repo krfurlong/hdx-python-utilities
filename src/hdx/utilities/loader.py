@@ -121,7 +121,7 @@ def load_file_to_str(path):
         str: String contents of file
 
     """
-    with open(path, 'rt') as f:
+    with open(path, 'rt', encoding='utf-8') as f:
         string = f.read().replace('\n', '')
     if not string:
         raise LoadError('%s file is empty!' % path)
